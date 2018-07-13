@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.elasticsearch.gradle:build-tools:6.3.1"
+    }
+}
+
+group 'com.elasticsearch.plugin.pipingsearch'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'antlr'
+apply plugin: 'elasticsearch.esplugin'
+
+// license of this project
+licenseFile = rootProject.file('LICENSE.txt')
+// copyright notices
+noticeFile = rootProject.file('NOTICE.txt')
+
+esplugin {
+    name 'piping-search'
+    description 'Elasticsearch Plugin to provide another searching method with piping and post processing of data'
+    classname 'com.elasticsearch.plugin.pipingsearch.RestHandlerPlugin'
+}
+
+dependencies {
+    antlr "org.antlr:antlr4:4.7"
+    compile 'org.elasticsearch:elasticsearch:6.3.1'
+    testCompile 'org.elasticsearch.test:framework:6.3.1'
+}
+
+// Set to false to not use elasticsearch checkstyle rules
+checkstyleMain.enabled = true
+checkstyleTest.enabled = true
+
+// FIXME dependency license check needs to be enabled
+dependencyLicenses.enabled = false
+// FIXME thirdparty audit needs to be enabled
+thirdPartyAudit.enabled = false
+// Uncomment this to skip license header checks
+licenseHeaders.enabled = false
+integTestRunner.enabled = false
+checkstyleMain.enabled = false
+forbiddenApisMain.enabled = false
+forbiddenPatterns.enabled = false

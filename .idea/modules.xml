@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.elasticsearch.plugin.pipingsearch.iml" filepath="$PROJECT_DIR$/.idea/modules/com.elasticsearch.plugin.pipingsearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.elasticsearch.plugin.pipingsearch_main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.elasticsearch.plugin.pipingsearch_main.iml" group="com.elasticsearch.plugin.pipingsearch" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.elasticsearch.plugin.pipingsearch_test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.elasticsearch.plugin.pipingsearch_test.iml" group="com.elasticsearch.plugin.pipingsearch" />
+    </modules>
+  </component>
+</project>
