@@ -108,6 +108,8 @@ public class QueryActionParser {
                 return new SortAction(this._client, params, keyValueParams, subActions);
             case "join":
                 return new JoinAction(this._client, params, keyValueParams, subActions);
+            case "lookup":
+                return new LookupAction(this._client, params, keyValueParams, subActions);
             default:
                 return null;
         }

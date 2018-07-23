@@ -18,13 +18,7 @@ public class JoinAction extends BaseAction {
     public Iterator<Map<String, Object>> getIterator(Iterator<Map<String, Object>> source) throws Exception {
         String[] joinFields = this.getKeyParamInArray("on", "Please provide on field list");
 
-        Iterator<Map<String, Object>> joinOutput = null;
-        if(this._subActions != null){
-            //run list of action
-            for(IAction action : this._subActions){
-                joinOutput = action.getIterator(joinOutput);
-            }
-        }
+        Iterator<Map<String, Object>> joinOutput = this.getSubSearch();
 
         List<Map<String, Object>> joinList = new ArrayList<>();
         while (joinOutput.hasNext()) {
@@ -60,5 +54,16 @@ public class JoinAction extends BaseAction {
         }
 
         return outputList.iterator();
+    }
+
+    protected Iterator<Map<String, Object>> getSubSearch() throws Exception{
+        Iterator<Map<String, Object>> joinOutput = null;
+        if(this._subActions != null){
+            //run list of action
+            for(IAction action : this._subActions){
+                joinOutput = action.getIterator(joinOutput);
+            }
+        }
+        return joinOutput;
     }
 }
